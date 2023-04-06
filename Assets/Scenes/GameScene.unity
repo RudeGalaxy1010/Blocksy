@@ -401,6 +401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blocksPoolPrefab: {fileID: 7642014491158341790, guid: d3f833b72b7523942afb6ce296ebae37,
     type: 3}
+  _blocksSpawnerPrefab: {fileID: 2405337781208153138, guid: e028840bc66481d4bab6b3a94b10f610,
+    type: 3}
 --- !u!1 &1824705956
 GameObject:
   m_ObjectHideFlags: 0
