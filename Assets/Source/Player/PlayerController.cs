@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed;
 
     private IInput _input;
+    private IMoveLimits _moveLimits;
 
-    public void Construct(IInput input)
+    public void Construct(IInput input, IMoveLimits moveLimits)
     {
+        _moveLimits = moveLimits;
         _input = input;
     }
 
@@ -28,5 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 direction3D = new Vector3(direction.x, 0, direction.y);
         _characterController.Move(direction3D * _speed * Time.deltaTime);
+        transform.position = _moveLimits.GetClampedPosition(transform.position);
     }
 }
