@@ -154,6 +154,7 @@ Transform:
   m_Children:
   - {fileID: 2142812972}
   - {fileID: 1824705957}
+  - {fileID: 1996404958}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputBootstrap: {fileID: 2142812973}
   _mapBootstrap: {fileID: 1824705958}
+  _moveLimitsBootstrap: {fileID: 1996404959}
   _playerPrefab: {fileID: 3237788790296385271, guid: 94490a8e3ca714346b22aedb651bc488,
     type: 3}
 --- !u!1 &705507993
@@ -396,6 +398,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mapPrefab: {fileID: 5205336595588159055, guid: b5b211e453000d043942604caf701417,
+    type: 3}
+--- !u!1 &1996404957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1996404958}
+  - component: {fileID: 1996404959}
+  m_Layer: 0
+  m_Name: Move Limits Bootstrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1996404958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996404957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 431007642}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996404959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996404957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0861604aa80a1c4f95d64f02a49bf2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveLimitsPrefab: {fileID: 5723467662432668042, guid: 061b8a87197977a44986c876ccc467e5,
     type: 3}
 --- !u!1 &2081501819
 GameObject:

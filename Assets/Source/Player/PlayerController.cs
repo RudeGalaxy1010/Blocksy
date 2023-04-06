@@ -24,12 +24,17 @@ public class PlayerController : MonoBehaviour
         }
 
         Move(_input.Velocity);
+        Rotate(_input.Velocity);
     }
 
     private void Move(Vector2 direction)
     {
-        Vector3 direction3D = new Vector3(direction.x, 0, direction.y);
-        _characterController.Move(direction3D * _speed * Time.deltaTime);
+        _characterController.Move(direction.To3D() * _speed * Time.deltaTime);
         transform.position = _moveLimits.GetClampedPosition(transform.position);
+    }
+
+    private void Rotate(Vector2 lookDirection)
+    {
+        transform.LookAt(transform.position + lookDirection.To3D());
     }
 }
