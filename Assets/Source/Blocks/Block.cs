@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Block : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class Block : CollectableItem
 {
     private BlocksPool _pool;
 

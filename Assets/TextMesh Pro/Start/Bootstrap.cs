@@ -20,10 +20,10 @@ public class Bootstrap : MonoBehaviour
         _map = _mapBootstrap.Map;
         _moveLimits =_moveLimitsBootstrap.CreateMoveLimitsFor(_map.transform, _playerPrefab.transform.localScale.y);
         _blocksSpawner = _blocksBootstrap.CreateSpawnerFor(_map);
-        _player = CreatePlayer(_map.SpawnPosition, _input, _moveLimits, new Inventory<Block>(10));
+        _player = CreatePlayer(_map.SpawnPosition, _input, _moveLimits, new Inventory(10));
     }
 
-    private Player CreatePlayer(Vector3 at, IInput input, IMoveLimits moveLimits, Inventory<Block> inventory)
+    private Player CreatePlayer(Vector3 at, IInput input, IMoveLimits moveLimits, Inventory inventory)
     {
         Player player = Instantiate(_playerPrefab, at, Quaternion.identity);
         player.Construct(input, moveLimits, inventory);
