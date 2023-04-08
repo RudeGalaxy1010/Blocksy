@@ -39,8 +39,8 @@ public class BlocksCollector : MonoBehaviour
         _blocksToCollect++;
         block.Grab();
         Sequence sequence = DOTween.Sequence()
-            .Append(block.transform.DOMove(_player.transform.position, 1f))
-            .Append(block.transform.DOScale(Vector3.zero, 1f))
+            .Join(block.transform.DOMove(_player.transform.position, 1f))
+            .Join(block.transform.DOScale(Vector3.zero, 1f))
             .OnComplete(() => OnBlockMoveComplete(block));
     }
 
