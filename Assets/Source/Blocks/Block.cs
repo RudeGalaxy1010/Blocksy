@@ -3,9 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Block : CollectableItem
 {
-    private BlocksPool _pool;
+    private BlockPool _pool;
 
-    public void Construct(BlocksPool pool)
+    public void Construct(BlockPool pool)
     {
         _pool = pool;
     }

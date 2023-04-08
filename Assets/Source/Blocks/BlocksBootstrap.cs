@@ -2,20 +2,32 @@ using UnityEngine;
 
 public class BlocksBootstrap : MonoBehaviour
 {
-    [SerializeField] private BlocksPool _blocksPoolPrefab;
-    [SerializeField] private BlocksSpawner _blocksSpawnerPrefab;
+    [SerializeField] private BlockPool _blocksPoolPrefab;
+    [SerializeField] private BlockSpawner _blocksSpawnerPrefab;
+    [SerializeField] private BlockPlacer _blockPlacerPrefab;
 
-    public BlocksSpawner CreateSpawnerFor(Map map)
+    private BlockPool _blockPool;
+
+    private BlockPool BlockPool => _blockPool ??= CreatePool();
+
+    public BlockSpawner CreateSpawnerFor(Map map)
     {
-        BlocksPool blocksPool = CreatePool();
-        BlocksSpawner blocksSpawner = Instantiate(_blocksSpawnerPrefab);
-        blocksSpawner.Construct(blocksPool, map.BlocksSpawnPoint);
+        BlockSpawner blocksSpawner = Instantiate(_blocksSpawnerPrefab);
+        blocksSpawner.Construct(BlockPool, map.BlocksSpawnPoint);
         return blocksSpawner;
     }
 
-    private BlocksPool CreatePool()
+    public BlockPlacer CreatePlacerFor(Map map)
     {
-        BlocksPool blocksPool = Instantiate(_blocksPoolPrefab);
+        BlockPlacer blockPlacer = 
+            Instantiate(_blockPlacerPrefab, map.BlocksPlacerSpawnPosition, Quaternion.identity);
+        blockPlacer.Construct(BlockPool);
+        return blockPlacer;
+    }
+
+    private BlockPool CreatePool()
+    {
+        BlockPool blocksPool = Instantiate(_blocksPoolPrefab);
         blocksPool.Construct();
         return blocksPool;
     }

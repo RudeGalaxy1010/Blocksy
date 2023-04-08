@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(Collider))]
 public class BlocksDetector : MonoBehaviour
 {
     public event Action<Block> BlockDetected;
 
     private void Start()
     {
-        SphereCollider collider = GetComponent<SphereCollider>();
+        Collider collider = GetComponent<Collider>();
 
         if (collider.isTrigger == false)
         {

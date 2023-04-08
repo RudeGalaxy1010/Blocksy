@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2405337781208153137}
-  - component: {fileID: 2405337781208153138}
+  - component: {fileID: 2887870934739814994}
   m_Layer: 0
   m_Name: Block Spawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2405337781208153138
+--- !u!114 &2887870934739814994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2405337781208153136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e4f4ffc0ae27d42b13d57394bb83cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ecd84c0909cf4e48aa4f60ef45887a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTime: 1

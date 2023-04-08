@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class BlocksSpawner : MonoBehaviour
+public class BlockSpawner : MonoBehaviour
 {
     private const int InfiniteLoops = -1;
 
     [SerializeField] private float _spawnTime;
 
     private Transform _spawnPoint;
-    private BlocksPool _blocksPool;
+    private BlockPool _blocksPool;
 
-    public void Construct(BlocksPool blocksPool, Transform spawnPoint)
+    public void Construct(BlockPool blocksPool, Transform spawnPoint)
     {
         _spawnPoint = spawnPoint;
         _blocksPool = blocksPool;

@@ -13,4 +13,6 @@ public class Player : MonoBehaviour
         _playerController.Construct(input, moveLimits);
         _blocksCollector.Construct(this, _inventory);
     }
+
+    public Inventory Inventory => _inventory;
 }

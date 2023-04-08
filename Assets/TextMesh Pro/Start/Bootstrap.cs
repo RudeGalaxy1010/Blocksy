@@ -11,7 +11,8 @@ public class Bootstrap : MonoBehaviour
     private IInput _input;
     private Map _map;
     private IMoveLimits _moveLimits;
-    private BlocksSpawner _blocksSpawner;
+    private BlockSpawner _blocksSpawner;
+    private BlockPlacer _blocksPlacer;
     private Player _player;
 
     private void Start()
@@ -20,7 +21,8 @@ public class Bootstrap : MonoBehaviour
         _map = _mapBootstrap.Map;
         _moveLimits =_moveLimitsBootstrap.CreateMoveLimitsFor(_map.transform, _playerPrefab.transform.localScale.y);
         _blocksSpawner = _blocksBootstrap.CreateSpawnerFor(_map);
-        _player = CreatePlayer(_map.SpawnPosition, _input, _moveLimits, new Inventory(10));
+        _blocksPlacer = _blocksBootstrap.CreatePlacerFor(_map);
+        _player = CreatePlayer(_map.PlayerSpawnPosition, _input, _moveLimits, new Inventory(10));
     }
 
     private Player CreatePlayer(Vector3 at, IInput input, IMoveLimits moveLimits, Inventory inventory)
