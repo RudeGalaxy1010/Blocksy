@@ -31,6 +31,8 @@ public class BlockPlacer : MonoBehaviour
         
         if (TryGetBlock(_playerDetector.Player, out Block block) == true)
         {
+            block.Grab();
+            block.transform.position = _playerDetector.Player.transform.position;
             PlaceBlock(block);
             this.StartTimer(() => { }, BlocksGetTime, 1);
         }
@@ -52,7 +54,6 @@ public class BlockPlacer : MonoBehaviour
 
     private void PlaceBlock(Block block)
     {
-        block.Grab();
         BlockPlace blockPlace = TryGetPlace();
 
         if (blockPlace != null)
@@ -60,6 +61,7 @@ public class BlockPlacer : MonoBehaviour
             Sequence sequence = DOTween.Sequence()
                 .Join(block.transform.DOMove(blockPlace.transform.position, _blocksPlaceTime))
                 .Join(block.transform.DOScale(blockPlace.transform.localScale, _blocksPlaceTime))
+                .Join(block.transform.DORotate(blockPlace.transform.rotation.eulerAngles, _blocksPlaceTime))
                 .OnComplete(() => OnPlaceBlockComplete(blockPlace));
         }
     }

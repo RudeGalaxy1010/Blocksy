@@ -48,6 +48,7 @@ public class BlocksCollector : MonoBehaviour
     {
         AddBlockToInventory(block);
         block.DOKill();
+        block.ResetScale();
         block.Release();
         block.Destroy();
     }
